@@ -36,10 +36,10 @@ html {
 
 .App {
   background-color: var(--grey);
-  height: 100vh; }
+  height: 100vh;
+  display: flex; }
 
 .sidebar {
-  position: fixed;
   height: 100vh;
   width: 8rem;
   background-color: var(--blue);
@@ -64,15 +64,14 @@ html {
   font-family: var(--sans);
   text-transform: uppercase; }
 
-.editor {
+.container {
   height: 100vh;
-  width: calc((100vw - 8rem) / 2);
+  flex: 1 1 calc(50vw - 4rem);
   background-color: #fff;
-  margin-left: 8rem;
   position: relative;
   background-color: var(--white); }
 
-.editor #editor {
+.container #editor {
   width: 95%;
   height: calc(100vh - 14rem);
   resize: none;
@@ -81,7 +80,7 @@ html {
   padding: 2rem 2.5% 4rem;
   border-left: 0.5rem solid var(--grey); }
 
-.editor .label {
+.container .label {
   position: absolute;
   color: var(--white);
   background-color: var(--yellow);
@@ -95,4 +94,20 @@ html {
   font-size: 1.8rem;
   line-height: 4.8rem;
   font-family: var(--sans);
+  font-weight: normal;
   letter-spacing: 1px; }
+
+.container:last-child {
+  border-left: 1px solid var(--grey); }
+
+.preview {
+  width: 95%;
+  height: calc(100vh - 14rem);
+  margin: 10rem 2.5% 0;
+  padding: 2rem 2.5% 4rem;
+  border-left: 0.5rem solid var(--grey);
+  font-family: var(--sans);
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--blue-dark);
+  overflow: auto; }
