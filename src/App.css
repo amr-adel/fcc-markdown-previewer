@@ -1,3 +1,39 @@
-h1 {
-  text-transform: uppercase;
-  text-align: center; }
+@import url("https://fonts.googleapis.com/css?family=Arvo|Rubik:400,400i,700");
+:root {
+  --serif: 'Arvo', serif;
+  --sans: 'Rubik', sans-serif;
+  --blue: #355263;
+  --blue-dark: #1F313F;
+  --yellow: #FDD24E;
+  --white: #EFEFEF;
+  --grey: #D5D5D3; }
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit; }
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: inherit; }
+
+button {
+  border: none;
+  color: inherit;
+  background: none; }
+
+img {
+  max-width: 100%; }
+
+html {
+  min-height: 100vh;
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: var(--sans); }
+
+.logo {
+  width: 5rem;
+  height: 5rem; }
