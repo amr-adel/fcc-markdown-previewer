@@ -12,6 +12,10 @@ class App extends Component {
             Markdown previewer
           </h1>
         </header>
+        <div className="editor">
+          <textarea name="editor" id="editor"></textarea>
+          <label htmlFor="editor" className='label'>editor</label>
+        </div>
       </div>
     );
   }
