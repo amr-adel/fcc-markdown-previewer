@@ -3,7 +3,65 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  state = {
+    rawInput: `# Welcome to my React Markdown Previewer!
+
+## This is a sub-heading...
+### And here's some other cool stuff:
+  
+Heres some code, \`<div></div>\`, between 2 backticks.
+
+\`\`\`
+// this is multi-line code:
+
+function anotherExample(firstLine, lastLine) {
+  if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {
+    return multiLineCode;
+  }
+}
+\`\`\`
+  
+You can also make text **bold**... whoa!
+Or _italic_.
+Or... wait for it... **_both!_**
+And feel free to go crazy ~~crossing stuff out~~.
+
+There's also [links](https://www.freecodecamp.com), and
+> Block Quotes!
+
+And if you want to get really crazy, even tables:
+
+Wild Header | Crazy Header | Another Header?
+------------ | ------------- | ------------- 
+Your content can | be here, and it | can be here....
+And here. | Okay. | I think we get it.
+
+- And of course there are lists.
+  - Some are bulleted.
+      - With different indentation levels.
+        - That look like this.
+
+
+1. And there are numbererd lists too.
+1. Use just 1s if you want! 
+1. But the list goes on...
+- Even if you use dashes or asterisks.
+* And last but not least, let's not forget embedded images:
+
+![React Logo w/ Text](https://goo.gl/Umyytc)`
+  }
+
+  onChange(raw) {
+    this.setState({ rawInput: raw })
+  }
+
+
   render() {
+    window.marked.setOptions({
+      breaks: true
+    });
+
     return (
       <div className="App">
         <header className="sidebar">
@@ -12,47 +70,22 @@ class App extends Component {
             Markdown previewer
           </h1>
         </header>
+
         <div className="container">
-          <textarea name="editor" id="editor"></textarea>
           <h2 className='label'>editor</h2>
+          <textarea
+            name="editor"
+            id="editor"
+            value={this.state.rawInput}
+            onChange={e => this.onChange(e.target.value)}
+          />
         </div>
+
         <article className="container">
           <h2 className='label'>previewer</h2>
-          <div className="preview" id='preview'>
-            <h1>Neighborhood Map (React)</h1>
-
-            <h2>Project Specification Criteria</h2>
-
-            <a href="https://codepen.io/freeCodeCamp/full/GrZVVO">https://codepen.io/freeCodeCamp/full/GrZVVO</a>
-
-            You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other <b>frontend frameworks</b> like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
-
-            <img src={logo} alt="markdown previewer logo" className='logo' />
-
-            <blockquote>You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery</blockquote>
-
-            <ul>
-              <li>Lorem ipsum dolor sit amet.</li>
-              <li>Lorem, ipsum dolor.</li>
-              <li>Lorem ipsum dolor sit amet consectetur.</li>
-              <li>Lorem ipsum, dolor sit amet <code>Google Maps API</code> consectetur adipisicing elit. Maiores quia quisquam illo!</li>
-            </ul>
-
-            <pre>{`
-  -- if class slot unavailable, check super class
-    -- if applied to argument, pass it to the class method new        
-    setmetatable(class, {
-      __index = function(self,key) return self.super[key] end,
-      __call  = function(self,...) return self.new(self,unpack(arg)) end 
-    })
-  
-    -- if instance method unavailable, check method slot in super class    
-    setmetatable(class.methods, {
-      __index = function(self,key) return class.super.methods[key] end
-    })
-    return class`}</pre>
-
-          </div>
+          <div className="preview" id="preview" dangerouslySetInnerHTML={{
+            __html: window.marked(this.state.rawInput)
+          }} />
         </article>
       </div>
     );
