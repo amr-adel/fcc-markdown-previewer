@@ -82,7 +82,7 @@ And here. | Okay. | I think we get it.
         </div>
 
         <article className="container">
-          <h2 className='label'>previewer</h2>
+          <h2 className='label'>preview</h2>
           <div className="preview" id="preview" dangerouslySetInnerHTML={{
             __html: window.marked(this.state.rawInput)
           }} />
