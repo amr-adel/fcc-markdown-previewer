@@ -82,7 +82,7 @@ html {
 
 .container .label {
   position: absolute;
-  color: var(--white);
+  color: var(--blue);
   background-color: var(--yellow);
   border-radius: .5rem;
   top: 2rem;
@@ -105,9 +105,97 @@ html {
   height: calc(100vh - 14rem);
   margin: 10rem 2.5% 0;
   padding: 2rem 2.5% 4rem;
-  border-left: 0.5rem solid var(--grey);
   font-family: var(--sans);
   font-size: 1.6rem;
   line-height: 1.6;
   color: var(--blue-dark);
   overflow: auto; }
+
+.preview h1, .preview h2, .preview h3, .preview h4, .preview h5, .preview h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25; }
+
+.preview h1 {
+  font-size: 2em;
+  padding-bottom: .3em;
+  border-bottom: 1px solid var(--grey); }
+
+.preview h2 {
+  font-size: 1.5em; }
+
+.preview h3 {
+  font-size: 1.2em; }
+
+.preview a {
+  color: #0366d6; }
+
+.preview a:hover {
+  text-decoration: underline; }
+
+.preview p {
+  margin-bottom: 1em; }
+
+.preview blockquote {
+  padding: 1em;
+  background-color: #f6f8fa;
+  border-left: 0.25em solid var(--blue);
+  margin-bottom: 1em;
+  border-radius: .5rem; }
+
+.preview blockquote p:last-child {
+  margin-bottom: 0; }
+
+.preview ul, .preview ol {
+  padding-left: 2em; }
+
+.preview ul li + li, .preview ol li + li {
+  margin-top: 0.25em; }
+
+.preview code {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: var(--yellow);
+  border-radius: 3px; }
+
+.preview pre {
+  padding: 16px;
+  margin-bottom: 1.5em;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f6f8fa;
+  border-radius: .5rem;
+  word-wrap: normal;
+  border-left: 0.25em solid var(--yellow); }
+
+.preview pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  line-height: 1.5;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+  display: inline;
+  max-width: auto;
+  overflow: visible; }
+
+.preview hr {
+  border: none;
+  border-bottom: 1px solid var(--grey);
+  margin: 1.5em auto; }
+
+.preview img {
+  margin-top: 1em; }
+
+.preview table {
+  border-collapse: collapse;
+  margin-bottom: 1em; }
+
+.preview table td, .preview table th {
+  border: 1px solid var(--grey);
+  padding: .2em .4em; }
