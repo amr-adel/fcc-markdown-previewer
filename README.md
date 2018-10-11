@@ -1,6 +1,6 @@
 # Build a Markdown Previewer | FCC Project
 
-[![Markdown Previewer](demo.png "Markdown Previewer")](https://amr-adel.github.io/fcc-markdown-previewer/)
+[![Markdown Previewer](public/demo.jpg "Markdown Previewer")](https://amr-adel.github.io/fcc-markdown-previewer/)
 
 A *FreeCodeCamp* challenge on using front end libraries to build a markdown previewer with the below user stories to be fulfilled:
 
